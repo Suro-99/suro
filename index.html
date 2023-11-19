@@ -1,202 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
 
-<html>
-	<head>
-		<title>Prologue by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>aa</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #111111;
+      background-color: #FAFAFA;
+    }
 
-			<div id="header">
+    .container {
+      position: relative;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
 
-				<div class="top">
+    .header {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      padding: 0 60px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #E9E7E7;
+    }
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Jane Doe</h1>
-							<p>Hyperspace Engineer</p>
-						</div>
+    .header h1 {
+      display: flex;
+      align-items: center;
+    }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
+    .header h1 strong {
+      font-size: 20px;
+      font-weight: 700;
+      margin-left: 16px;
+    }
 
-				</div>
+    .header h1 small {
+      font-size: 16px;
+      font-weight: 400;
+      margin-left: 4px;
+    }
 
-				<div class="bottom">
+    .main {
+      padding-top: 140px;
+    }
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+    .main table {
+      width: 100%;
+      background-color: #ffffff;
+    }
 
-				</div>
+    .main table th,
+    .main table td {
+      vertical-align: middle;
+    }
 
-			</div>
+    .main table thead th {
+      padding: 12px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      border-top: 2px solid #D91F29;
+      background-color: #F1F1F5;
+      text-align: left;
+    }
 
-		<!-- Main -->
-			<div id="main">
+    .main table tbody td {
+      padding: 10px 16px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+    .main table tbody td a {
+      color: #0176F9;
+    }
 
-							<header>
-								<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
-								site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
-								<p>Ligula scelerisque justo sem accumsan diam quis<br />
-								vitae natoque dictum sollicitudin elementum.</p>
-							</header>
+    .main table tbody td span {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 14px;
+    }
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-							</footer>
+    .main table tbody td span.before {
+      background-color: #F8DEE0;
+    }
 
-						</div>
-					</section>
+    .main table tbody td span.ongoing {
+      background-color: #D9ECF9;
+    }
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
+    .main table tbody td span.after {
+      background-color: #D2F5D9;
+    }
 
-							<header>
-								<h2>Portfolio</h2>
-							</header>
+    .main table tbody tr:hover td {
+      background-color: #F1F1F1;
+    }
 
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
-							egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
-							Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis
-							fusce hendrerit lacus ridiculus.</p>
+    .footer {
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+      height: 60px;
+    }
 
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-										<header>
-											<h3>Ipsum Feugiat</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>Rhoncus Semper</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Magna Nullam</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-										<header>
-											<h3>Natoque Vitae</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-										<header>
-											<h3>Dolor Penatibus</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-										<header>
-											<h3>Orci Convallis</h3>
-										</header>
-									</article>
-								</div>
-							</div>
+    .footer span {
+      display: inline-block;
+      color: #767676;
+    }
 
-						</div>
-					</section>
+    .footer strong {
+      display: inline-block;
+      margin-left: 8px;
+      font-weight: 400;
+    }
+  </style>
+</head>
 
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-							ornare iaculis.</p>
-
-						</div>
-					</section>
-
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>
+        <strong>aa</strong>
+        <small>페이지 리스트</small>
+      </h1>
+    </header>
+    <main class="main">
+      <table>
+        <colgroup>
+          <col style="width: 30%">
+          <col style="width: 30%">
+          <col style="width: 20%">
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">제목</th>
+            <th scope="col">링크</th>
+            <th scope="col">상태</th>
+            <th scope="col">메모</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>첫페이지</td>
+            <td><a href="./html/initial.html" target="_blank">initial.html</a></td>
+            <td><span class="before">준비</span></td>
+            <td>웹사이트</td>
+          </tr>
+          <tr>
+            <td>회사소개</td>
+            <td><a href="./html/company.html" target="_blank">company.html</a></td>
+            <td><span class="before">준비</span></td>
+            <td>회사소개입니다</td>
+          </tr>
+          <tr>
+            <td>사업소개</td>
+            <td><a href="./html/organization.html" target="_blank">organization.html</a></td>
+            <td><span class="before">준비</span></td>
+            <td>사업소개입니다</td>
+          </tr>
+          <tr>
+            <td>Products_Detail</td>
+            <td><a href="./html/products.html" target="_blank">products.html</a></td>
+            <td><span class="before">준비</span></td>
+            <td>Products_Detail입니다</td>
+          </tr>
+          <tr>
+            <td>홍보센터</td>
+            <td><a href="./html/center.html" target="_blank">center.html</a></td>
+            <td><span class="before">준비</span></td>
+            <td>홍보센터입니다</td>
+          </tr>
+          <tr>
+            <td>고객센터_오시는길</td>
+            <td><a href="./html/come.html" target="_blank">come.html</a></td>
+            <td><span class="before">준비</span></td>
+            <td>고객센터_오시는길입니다</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer class="footer">
+      <span>2023. 11. 19.</span>
+      <strong>aa</strong>
+    </footer>
+  </div>
+</body>

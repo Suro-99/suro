@@ -22,76 +22,7 @@
 
 <body>
   <!-- [S]basic-N1 -->
-  <header class="basic-N1" data-bid="nZLp5agTN6">
-    <div class="header-inner">
-      <div class="header-container container-lg">
-        <h1 class="header-title">
-          <a href="javascript:void(0)">
-            <img src="./resources/images/img_logo_black.png" alt="로고">
-          </a>
-        </h1>
-        <div class="header-center">
-          <div class="header-title header-mobile-top">
-            <a href="javascript:void(0)">
-              <img src="./resources/images/img_logo_black.png" alt="로고">
-            </a>
-          </div>
-          <ul class="header-gnblist">
-            <li class="header-gnbitem">
-              <a class="header-gnblink" href="javascript:void(0)">
-                <span>회사소개</span>
-              </a>
-            </li>
-            <li class="header-gnbitem">
-              <a class="header-gnblink" href="javascript:void(0)">
-                <span>사업소개</span>
-              </a>
-            </li>
-            <li class="header-gnbitem">
-              <a class="header-gnblink" href="javascript:void(0)">
-                <span>제품소개</span>
-              </a>
-            </li>
-            <li class="header-gnbitem">
-              <a class="header-gnblink" href="javascript:void(0)">
-                <span>홍보센터</span>
-              </a>
-            </li>
-            <li class="header-gnbitem">
-              <a class="header-gnblink" href="javascript:void(0)">
-                <span>고객센터</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="header-right">
-          <div class="header-lang">
-            <button class="header-langbtn">KOR</button>
-            <ul class="header-langlist">
-              <li class="header-langitem">
-                <a href="javascript:void(0)">KOR</a>
-              </li>
-              <li class="header-langitem">
-                <a href="javascript:void(0)">ENG</a>
-              </li>
-            </ul>
-          </div>
-          <div class="header-utils">
-            <button class="btn-allmenu">
-              <img src="./resources/icons/ico_menu_black.svg" alt="PC메뉴 아이콘">
-            </button>
-            <button class="btn-momenu">
-              <img src="./resources/icons/ico_menu_black.svg" alt="모바일메뉴 아이콘">
-            </button>
-            <button class="btn-close">
-              <img src="./resources/icons/ico_close_black.svg" alt="닫기 아이콘">
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="header-dim"></div>
-  </header>
+  <div id="header"></div>
   <!-- [E]basic-N1 -->
   <main class="th-layout-main ">
     <!-- [S]basic-N10 -->
@@ -181,77 +112,18 @@
     <!-- [E]basic-N21 -->
   </main>
   <!-- [S]basic-N4 -->
-  <footer class="basic-N4" data-bid="Ellp5agtWM">
-    <div class="footer-container container-lg">
-      <div class="footer-top">
-        <h1 class="footer-logo">
-          <a href="javascript:void(0)">
-            <img src="./resources/images/img_logo_lightgray.png" alt="로고">
-          </a>
-        </h1>
-        <ul class="footer-menulist">
-          <li class="footer-menuitem">
-            <a href="javascript:void(0)">
-              <span>이용약관</span>
-            </a>
-          </li>
-          <li class="footer-menuitem">
-            <a href="javascript:void(0)">
-              <span>개인정보처리방침</span>
-            </a>
-          </li>
-          <li class="footer-menuitem">
-            <a href="javascript:void(0)">
-              <span>푸터메뉴1</span>
-            </a>
-          </li>
-          <li class="footer-menuitem">
-            <a href="javascript:void(0)">
-              <span>푸터메뉴2</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="footer-snslist">
-          <li class="footer-snsitem">
-            <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./resources/icons/ico_instagram_lightgrey.svg" alt="인스타그램">
-            </a>
-          </li>
-          <li class="footer-snsitem">
-            <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./resources/icons/ico_youtube_lightgrey.svg" alt="유튜브">
-            </a>
-          </li>
-          <li class="footer-snsitem">
-            <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./resources/icons/ico_facebook_lightgrey.svg" alt="페이스북">
-            </a>
-          </li>
-          <li class="footer-snsitem">
-            <a class="footer-snslink" href="javascript:void(0)">
-              <img src="./resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-txt">
-          <p> 서울시 영등포구 선유로70 우리벤처타운2 705호 </p>
-          <p>
-            <span>T. 070-8872-8874</span>
-            <span>E. help@openfield.co.kr</span>
-          </p>
-        </div>
-        <div class="footer-txt">
-          <p>2022 BY TEMPLATEHOUSE. ALL RIGHTS RESEVED</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer"></div>
   <!-- [E]basic-N4 -->
   <script src="./resources/js/setting.js"></script>
   <script src="./resources/js/plugin.js"></script>
   <script src="./resources/js/template.js"></script>
   <script src="./resources/js/common.js"></script>
   <script src="./resources/js/script.js"></script>
+
+  <script>
+    $(function(){
+        $("#header").load("./header.html");
+        $("#footer").load("./footer.html");
+    });
+</script>
 </body>

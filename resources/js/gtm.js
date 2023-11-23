@@ -130,3 +130,5 @@ var ecomObj = {
   transaction_id : "tr_Id_" + getDate(),
   value : "49500"
 }  
+
+ecommercelogEvent("purchase", ecomObj);

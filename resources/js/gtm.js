@@ -1,3 +1,23 @@
+var getDate = function() {
+	var date = new Date();
+	var yyyy = date.getFullYear().toString();
+	var MM = getFullDate(date.getMonth() + 1,2);
+	var dd = getFullDate(date.getDate(), 2);
+	var hh = getFullDate(date.getHours(), 2);
+	var mm = getFullDate(date.getMinutes(), 2)
+	var ss = getFullDate(date.getSeconds(), 2)
+
+	return yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
+}
+
+var getFullDate = function(number, length) {
+	var str = '' + number;
+  while (str.length < length) {
+  	str = '0' + str;
+  }
+  return str;
+}
+
 var getDeviceChannel = function() {
 	var _deviceChannel = "MOWEB";
 	var _userAgnet = window.navigator.userAgent;
@@ -18,26 +38,49 @@ var getDeviceChannel = function() {
 	return _deviceChannel;
 }
 
-function getDate() {
-	var date = new Date();
-	var yyyy = date.getFullYear().toString();
-	var MM = getFullDate(date.getMonth() + 1,2);
-	var dd = getFullDate(date.getDate(), 2);
-	var hh = getFullDate(date.getHours(), 2);
-	var mm = getFullDate(date.getMinutes(), 2)
-	var ss = getFullDate(date.getSeconds(), 2)
-
-	return yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
-}
-
-function getFullDate(number, length) {
-	var str = '' + number;
-  while (str.length < length) {
-  	str = '0' + str;
+var logEvent = function (name, params) {
+  if (!name) { return; }
+  if (window.AnalyticsWebInterface) {
+    window.AnalyticsWebInterface.logEvent(name, JSON.stringify(params));
   }
-  return str;
+  else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.firebase) {
+    var message = { event: 'logEvent', name: name, parameters: params };
+    window.webkit.messageHandlers.firebase.postMessage(message);
+  }
+  else {
+    window.dataLayer.push({ event: name, parameters: params });
+  }
 }
 
+var setUserProperty = function (name, value) {
+  if (!name || !value) { return; }
+
+  var message = { event: 'setUserProperty', name: name, value: value };
+
+  if (window.AnalyticsWebInterface) {
+    window.AnalyticsWebInterface.setUserProperty(name, value);
+  }
+  else if (window.webkit && window.webkit.messageHandlers
+    && window.webkit.messageHandlers.firebase) {
+    window.webkit.messageHandlers.firebase.postMessage(message);
+  }
+}
+
+var ecommercelogEvent = function (name, params) {
+  if (!name || !params) { return; }
+
+  if (window.AnalyticsWebInterface) {
+    window.AnalyticsWebInterface.ecommerceLogEvent(name, JSON.stringify(params));
+  }
+  else if (window.webkit && window.webkit.messageHandlers
+    && window.webkit.messageHandlers.firebase) {
+    var message = { event: 'ecommerceLogEvent', name: name, parameters: params };
+    window.webkit.messageHandlers.firebase.postMessage(message);
+  }
+  else {
+    window.dataLayer.push({ event: name, parameters: params });
+  }
+}
 
 var dataLayer = dataLayer || [];
 var pushData = {
@@ -70,13 +113,12 @@ for(var i = 0;i < 10; i++){
         coupon : "prd_coupon_" + (i+1) + "_" + getDate(),
         location_id: "prd_lo_id_" + (i+1) + "_" + getDate(),
         currency : "KRW",
-        quantity : Number(i+1),
+        quantity : 1,
         price : Number((i+1) * 1000),
         discount : Number((i+1) * 100),
     }
     item.push(prdObj);
 }
-
 
 var ecomObj = {
   affiliation : "tr_af_" + getDate(),
@@ -86,7 +128,5 @@ var ecomObj = {
   shipping : "2500",
   tax : "0",
   transaction_id : "tr_Id_" + getDate(),
-  value : "52000"
+  value : "49500"
 }  
-
-ecommercelogEvent("purchase", ecomObj);

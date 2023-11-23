@@ -125,10 +125,10 @@ var ecomObj = {
   coupon : "tr_co_" + getDate(),
   currency : "KRW",
   items : item,
-  shipping : "2500",
-  tax : "0",
+  shipping : 2500,
+  tax : 0,
   transaction_id : "tr_Id_" + getDate(),
-  value : "49500"
+  value : 49500
 }  
 
 ecommercelogEvent("purchase", ecomObj);

@@ -18,6 +18,28 @@ var getDeviceChannel = function() {
 	return _deviceChannel;
 }
 
+function getDate() {
+	var date = new Date();
+	var yyyy = date.getFullYear().toString();
+	var MM = pad(date.getMonth() + 1,2);
+	var dd = pad(date.getDate(), 2);
+	var hh = pad(date.getHours(), 2);
+	var mm = pad(date.getMinutes(), 2)
+	var ss = pad(date.getSeconds(), 2)
+
+	return yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
+}
+
+function getFullDate(number, length) {
+	var str = '' + number;
+  while (str.length < length) {
+  	str = '0' + str;
+  }
+  return str;
+}
+
+
+
 
 var dataLayer = dataLayer || [];
 var pushData = {

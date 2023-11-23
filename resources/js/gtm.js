@@ -21,11 +21,11 @@ var getDeviceChannel = function() {
 function getDate() {
 	var date = new Date();
 	var yyyy = date.getFullYear().toString();
-	var MM = pad(date.getMonth() + 1,2);
-	var dd = pad(date.getDate(), 2);
-	var hh = pad(date.getHours(), 2);
-	var mm = pad(date.getMinutes(), 2)
-	var ss = pad(date.getSeconds(), 2)
+	var MM = getFullDate(date.getMonth() + 1,2);
+	var dd = getFullDate(date.getDate(), 2);
+	var hh = getFullDate(date.getHours(), 2);
+	var mm = getFullDate(date.getMinutes(), 2)
+	var ss = getFullDate(date.getSeconds(), 2)
 
 	return yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss;
 }

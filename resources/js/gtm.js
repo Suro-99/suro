@@ -207,7 +207,7 @@ items.push(itemObj2);
 dataLayerObj = {
   value : 1901000,
   shipping : 3000,
-  transaction_id : "2024020548986",
+  transaction_id : "2024020848986",
   coupon : "한샘몰 첫구매 쿠폰 (1만원 이상 구매시)",
   items : items,
   event_keyword : "ga4_only_new_purchase",
@@ -217,9 +217,13 @@ logEvent("purchase", dataLayerObj);
 
 dataLayerClearObj = {
     parameters : {
-        items : undefined,
-        currency : undefined,
-        event_keyword : undefined
+      value : undefined,
+      shipping : undefined,
+      transaction_id : undefined,
+      items : undefined,
+      coupon : undefined,
+      currency : undefined,
+      event_keyword : undefined
     }
 }
 dataLayer.push(dataLayerClearObj);
@@ -239,9 +243,10 @@ logEvent("refund", dataLayerObj);
 
 dataLayerClearObj = {
     parameters : {
-        items : undefined,
-        currency : undefined,
-        event_keyword : undefined
+      transaction_id : undefined,
+      items : undefined,
+      currency : undefined,
+      event_keyword : undefined
     }
 }
 dataLayer.push(dataLayerClearObj);

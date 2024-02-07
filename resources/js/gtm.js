@@ -199,6 +199,8 @@ var itemObj2 = {
   currency : "KRW"
 };
 
+items = [];
+items.push(itemObj);
 items.push(itemObj2);
 
 // 결제 완료

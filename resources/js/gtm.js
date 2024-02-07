@@ -96,39 +96,151 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5XVB336S');
 
 
-var item = [];
-var aa = 0;
-for(var i = 0;i < 10; i++){
-    aa += (i + 1);
-    var prdObj = {
-        item_name : 'prd_name_' + (i+1) + "_" + getDate(),
-        item_id : 'prd_Id_' + (i+1) + "_" + getDate(),
-        item_brand : 'prd_br_' + (i+1) + "_" + getDate(),
-        item_category : 'prd_cate_1' + (i+1) + "_" + getDate(),
-        item_category2 : 'prd_cate_2' + (i+1) + "_" + getDate(),
-        item_category3 : 'prd_cate_3' + (i+1) + "_" + getDate(),
-        item_category4 : 'prd_cate_4' + (i+1) + "_" + getDate(),
-        item_variant : "prd_option_" + (i+1) + "_" + getDate(),
-        affiliation : "prd_affli_" + (i+1) + "_" + getDate(),
-        coupon : "prd_coupon_" + (i+1) + "_" + getDate(),
-        location_id: "prd_lo_id_" + (i+1) + "_" + getDate(),
-        currency : "KRW",
-        quantity : 1,
-        price : Number((i+1) * 1000),
-        discount : Number((i+1) * 100),
-    }
-    item.push(prdObj);
+// var item = [];
+// var aa = 0;
+// for(var i = 0;i < 10; i++){
+//     aa += (i + 1);
+//     var prdObj = {
+//         item_name : 'prd_name_' + (i+1) + "_" + getDate(),
+//         item_id : 'prd_Id_' + (i+1) + "_" + getDate(),
+//         item_brand : 'prd_br_' + (i+1) + "_" + getDate(),
+//         item_category : 'prd_cate_1' + (i+1) + "_" + getDate(),
+//         item_category2 : 'prd_cate_2' + (i+1) + "_" + getDate(),
+//         item_category3 : 'prd_cate_3' + (i+1) + "_" + getDate(),
+//         item_category4 : 'prd_cate_4' + (i+1) + "_" + getDate(),
+//         item_variant : "prd_option_" + (i+1) + "_" + getDate(),
+//         affiliation : "prd_affli_" + (i+1) + "_" + getDate(),
+//         coupon : "prd_coupon_" + (i+1) + "_" + getDate(),
+//         location_id: "prd_lo_id_" + (i+1) + "_" + getDate(),
+//         currency : "KRW",
+//         quantity : 1,
+//         price : Number((i+1) * 1000),
+//         discount : Number((i+1) * 100),
+//     }
+//     item.push(prdObj);
+// }
+
+
+// var ecomObj = {
+//   affiliation : "tr_af_" + getDate(),
+//   coupon : "tr_co_" + getDate(),
+//   currency : "KRW",
+//   items : item,
+//   shipping : 2500,
+//   tax : 0,
+//   transaction_id : "tr_Id_" + getDate(),
+//   value : 49500
+// }  
+
+// ecommercelogEvent("purchase", ecomObj);
+
+
+// 상품 상세
+var itemObj = {
+  item_id : "703619",
+  item_name : "[쌤위크특가]바이엘 채널 옷장세트 140cm~350cm(높이216cm) 화이트 16종",
+  item_brand : "한샘",
+  item_category : "가구",
+  item_category2 : "옷장·드레스룸",
+  item_category3 : "여닫이옷장",
+  price : 629000,
+  currency : "KRW"
+};
+
+var items = [];
+items.push(itemObj);
+
+var dataLayerObj = {
+  items : items,
+  event_keyword : "ga4_only_view_item",
+  currency : "KRW"
 }
+logEvent("view_item", dataLayerObj);
 
-var ecomObj = {
-  affiliation : "tr_af_" + getDate(),
-  coupon : "tr_co_" + getDate(),
-  currency : "KRW",
-  items : item,
-  shipping : 2500,
-  tax : 0,
-  transaction_id : "tr_Id_" + getDate(),
-  value : 49500
-}  
+dataLayerClearObj = {
+    parameters : {
+        items : undefined,
+        currency : undefined,
+        event_keyword : undefined
+    }
+}
+dataLayer.push(dataLayerClearObj);
 
-ecommercelogEvent("purchase", ecomObj);
+
+
+ // 장바구니 추가
+dataLayerObj = {
+  items : items,
+  event_keyword : "ga4_only_add_to_cart",
+  currency : "KRW"
+}
+logEvent("add_to_cart", dataLayerObj);
+
+dataLayerClearObj = {
+    parameters : {
+        items : undefined,
+        currency : undefined,
+        event_keyword : undefined
+    }
+}
+dataLayer.push(dataLayerClearObj);
+
+
+// 주문서 작성
+var itemObj2 = {
+  item_id : "823609",
+  item_name : "[쌤위크특가] 포레 컴포트 6인 라운지세트 (벤치1, 코너벤치1, PP의자2 포함)",
+  item_brand : "한샘",
+  item_category : "가구",
+  item_category2 : "식탁",
+  item_category3 : "6인용식탁이상",
+  price : 1269000,
+  quantity: 1,
+  currency : "KRW"
+};
+
+items.push(itemObj2);
+
+// 결제 완료
+dataLayerObj = {
+  value : 1901000,
+  shipping : 3000,
+  transaction_id : "2024020548986",
+  coupon : "한샘몰 첫구매 쿠폰 (1만원 이상 구매시)",
+  items : items,
+  event_keyword : "ga4_only_new_purchase",
+  currency : "KRW"
+}
+logEvent("purchase", dataLayerObj);
+
+dataLayerClearObj = {
+    parameters : {
+        items : undefined,
+        currency : undefined,
+        event_keyword : undefined
+    }
+}
+dataLayer.push(dataLayerClearObj);
+
+
+// 환불 완료
+items = [];
+items.push(itemObj2);
+
+var dataLayerObj = {
+  transaction_id : "2024020548986",
+  items : items,
+  event_keyword : "ga4_only_refund",
+  currency : "KRW"
+}
+logEvent("refund", dataLayerObj);
+
+dataLayerClearObj = {
+    parameters : {
+        items : undefined,
+        currency : undefined,
+        event_keyword : undefined
+    }
+}
+dataLayer.push(dataLayerClearObj);
+

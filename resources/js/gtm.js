@@ -137,8 +137,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 // 상품 상세
 var itemObj = {
-  item_id : "703619",
-  item_name : "[쌤위크특가]바이엘 채널 옷장세트 140cm~350cm(높이216cm) 화이트 16종",
+  item_id : "703619" + (i+1) + "_" + getDate(),
+  item_name : "[쌤위크특가]바이엘 채널 옷장세트 140cm~350cm(높이216cm) 화이트 16종" ,
   item_brand : "한샘",
   item_category : "가구",
   item_category2 : "옷장·드레스룸",
@@ -188,7 +188,7 @@ dataLayer.push(dataLayerClearObj);
 
 // 주문서 작성
 var itemObj2 = {
-  item_id : "823609",
+  item_id : "823609" + (i+1) + "_" + getDate(),
   item_name : "[쌤위크특가] 포레 컴포트 6인 라운지세트 (벤치1, 코너벤치1, PP의자2 포함)",
   item_brand : "한샘",
   item_category : "가구",
@@ -207,13 +207,13 @@ items.push(itemObj2);
 dataLayerObj = {
   value : 1901000,
   shipping : 3000,
-  transaction_id : "2024020848986",
+  transaction_id : "tr_" + getDate(),
   coupon : "한샘몰 첫구매 쿠폰 (1만원 이상 구매시)",
   items : items,
   event_keyword : "ga4_only_new_purchase",
   currency : "KRW"
 }
-logEvent("purchase", dataLayerObj);
+logEvent("new_purchase", dataLayerObj);
 
 dataLayerClearObj = {
     parameters : {
@@ -234,7 +234,7 @@ items = [];
 items.push(itemObj2);
 
 var dataLayerObj = {
-  transaction_id : "2024020548986",
+  transaction_id : "tr_" + getDate(),
   items : items,
   event_keyword : "ga4_only_refund",
   currency : "KRW"

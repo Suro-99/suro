@@ -213,10 +213,10 @@ dataLayerObj = {
   transaction_id : "tr_" + getDate(),
   coupon : "한샘몰 첫구매 쿠폰 (1만원 이상 구매시)",
   items : items,
-  event_keyword : "ga4_only_purchase",
+  event_keyword : "ga4_only_add_payment_info",
   currency : "KRW"
 }
-logEvent("purchase", dataLayerObj);
+logEvent("add_payment_info", dataLayerObj);
 
 dataLayerClearObj = {
     parameters : {
